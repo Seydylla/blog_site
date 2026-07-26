@@ -5,10 +5,10 @@ require base_path('Vaildator.php');
 $config = require base_path('config.php');
 $db = new Database($config['database']);
 
+$errors = [];
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $errors = [];
 
     $validator = new Validator();
 
@@ -83,4 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-view('articles/create.view.php');
+view('articles/create.view.php', [
+    'errors' => $errors
+]);

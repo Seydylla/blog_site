@@ -6,7 +6,7 @@
   <title>Create Article — LumenBlog</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/js/tailwind.config.js"></script>
+  <script src="/assets/js/tailwind.config.js"></script>
   <link rel="stylesheet" href="assets/style/custom.css">
 </head>
 <body class="bg-bg font-body text-ink min-h-screen p-5 sm:p-10 flex flex-col justify-center items-center">

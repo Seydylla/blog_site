@@ -13,4 +13,7 @@ $article = $db->query('select * from articles where id = :id', [
 ])->findOrFail();
 
 authorize($currentUser === $article['writer_id']);
-view('articles/article.view.php');
+view('articles/article.view.php', [
+    'id' => $id,
+    'article' => $article
+]);
