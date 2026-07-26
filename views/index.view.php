@@ -14,7 +14,7 @@
 <body class="min-h-screen bg-bg font-body text-ink">
 
   <!-- ================= NAVBAR ================= -->
-  <?php require 'views/partials/nav.php' ?>
+  <?php require base_path('views/partials/nav.php') ?>
 
   <main>
     <!-- ================= HERO ================= -->
@@ -141,7 +141,7 @@
     </section>
   </main>
 
-  <?php require 'views/partials/footer.php' ?>
+  <?php require base_path('views/partials/footer.php') ?>
 
   <!-- ================= SCRIPTS & SYSTEM STATE ================= -->
   <script src="views/js/main.js"></script>

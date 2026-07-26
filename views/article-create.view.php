@@ -14,7 +14,7 @@
   <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto">
     <h1 class="text-2xl font-bold mb-6">Create New Article</h1>
 
-    <form action="/article/create" method="POST" enctype="multipart/form-data" class="space-y-4">
+    <form action="/articles/create" method="POST" enctype="multipart/form-data" class="space-y-4">
       <div>
         <label class="block text-sm font-medium mb-1">Title</label>
         <input type="text" name="title" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
