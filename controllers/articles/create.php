@@ -1,8 +1,8 @@
 <?php
 
-require 'Vaildator.php';
+require base_path('Vaildator.php');
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 
@@ -83,4 +83,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-require 'views/article-create.view.php';
+view('articles/create.view.php');

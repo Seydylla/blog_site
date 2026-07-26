@@ -1,6 +1,6 @@
 <?php
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 
@@ -13,4 +13,4 @@ $article = $db->query('select * from articles where id = :id', [
 ])->findOrFail();
 
 authorize($currentUser === $article['writer_id']);
-require 'views/article.view.php';
+view('articles/article.view.php');

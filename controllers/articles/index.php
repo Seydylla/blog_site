@@ -1,6 +1,6 @@
 <?php
 
-$config = require 'config.php';
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 $articles = [];
@@ -12,4 +12,4 @@ foreach ($authorsData as $author) {
     $authors[$author['id']] = $author;
 }
 
-require 'views/articles.view.php';
+view('articles/index.view.php');
