@@ -6,8 +6,8 @@
   <title>LumenBlog — Stories Worth Reading</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="views/js/tailwind.config.js"></script>
-  <link rel="stylesheet" href="views/style/custom.css">
+  <script src="assets/js/tailwind.config.js"></script>
+  <link rel="stylesheet" href="assets/style/custom.css">
 
 </head>
 
@@ -144,8 +144,8 @@
   <?php require base_path('views/partials/footer.php') ?>
 
   <!-- ================= SCRIPTS & SYSTEM STATE ================= -->
-  <script src="views/js/main.js"></script>
-  <script src="views/js/index.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
 
 </body>
 </html>
