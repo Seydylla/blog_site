@@ -12,4 +12,7 @@ foreach ($authorsData as $author) {
     $authors[$author['id']] = $author;
 }
 
-view('articles/index.view.php');
+view('articles/index.view.php', [
+    'articles' => $articles,
+    'authorsData' => $authorsData
+]);
