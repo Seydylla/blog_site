@@ -56,7 +56,6 @@
 
   <?php require base_path('views/partials/footer.php') ?>
 
-  <!-- ================= SCRIPTS & SYSTEM STATE ================= -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/index.js"></script>
 
