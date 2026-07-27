@@ -66,6 +66,10 @@
         <p><?= htmlspecialchars($article['article_description']) ?></p>
       </div>
 
+      <form class="mt-6" method="POST">
+        <button class="text-sm text-red-500">Delete</button>
+      </form>
+
     </article>
   </main>
 
