@@ -33,6 +33,16 @@ class Router{
     public function put($uri, $controller) {
         $this->add('PUT', $uri, $controller);
     }
+
+    public function route($uri, $method) {
+        foreach($this->routes as $route) {
+            if($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                return require base_path($route['controller']);
+            }
+        }
+
+        $this->abort();
+    }
 }
 
 
