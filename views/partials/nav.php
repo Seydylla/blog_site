@@ -32,7 +32,6 @@
       <a href="/" class="text-sm font-medium text-ink/80">Home</a>
       <a href="/articles" class="text-sm font-medium text-ink/80">Articles</a>
       <a href="/about" class="text-sm font-medium text-ink/80">About</a>
-      <a href="#newsletter" class="mt-2 rounded-full bg-brand px-5 py-2.5 text-center text-sm font-semibold text-white">Subscribe</a>
     </nav>
   </div>
 </header>
