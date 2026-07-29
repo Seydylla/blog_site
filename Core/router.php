@@ -43,6 +43,14 @@ class Router{
 
         $this->abort();
     }
+
+    protected function abort($code = 404) {
+        http_response_code(404);
+
+        require base_path("views/{$code}.php");
+
+        die();
+    }
 }
 
 
