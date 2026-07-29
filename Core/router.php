@@ -13,6 +13,26 @@ class Router{
             'controller' => $controller
         ];
     }
+
+    public function get($uri, $controller) {
+        $this->add('GET', $uri, $controller);
+    }
+
+    public function post($uri, $controller) {
+        $this->add('POST', $uri, $controller);
+    }
+
+    public function delete($uri, $controller) {
+        $this->add('Delete', $uri, $controller);
+    }
+
+    public function patch($uri, $controller) {
+        $this->add('PATCH', $uri, $controller);
+    }
+
+    public function put($uri, $controller) {
+        $this->add('PUT', $uri, $controller);
+    }
 }
 
 
