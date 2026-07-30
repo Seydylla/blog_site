@@ -7,4 +7,6 @@ $router->get('/article', 'controllers/articles/show.php');
 $router->delete('/article', 'controllers/articles/destroy.php');
 
 $router->get('/articles/create', 'controllers/articles/create.php');
+$router->post('/articles/create', 'controllers/articles/store.php');
+
 $router->get('/articles', 'controllers/articles/index.php');
