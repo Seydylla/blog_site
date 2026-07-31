@@ -41,7 +41,7 @@
 
       <div>
         <label class="block text-sm font-medium mb-1">Header / Excerpt</label>
-        <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3" value="<?= htmlspecialchars($article['header'] ?? '') ?>"></textarea>
+        <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"><?= htmlspecialchars($article['header'] ?? '') ?></textarea>
       </div>
 
       <?php if (isset($errors['header'])) : ?>
@@ -51,7 +51,7 @@
       <!-- Main Article Content Area -->
       <div>
         <label class="block text-sm font-medium mb-1">Article Content</label>
-        <textarea name="article_description" required value="<?= htmlspecialchars($article['article_description'] ?? '') ?>" placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"></textarea>
+        <textarea name="article_description" required placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"><?= htmlspecialchars($article['article_description'] ?? '') ?></textarea>
       </div>
 
       <?php if (isset($errors['article'])) : ?>
@@ -66,7 +66,7 @@
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Read Time (min)</label>
-          <input type="number" name="read_time" value="5" required 
+          <input type="number" name="read_time" value="<?= htmlspecialchars($article['read_time'] ?? '') ?>" required 
             class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
         </div>
         <div>
