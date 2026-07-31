@@ -15,9 +15,13 @@
     <h1 class="text-2xl font-bold mb-6">Edit Article</h1>
 
     <form action="/articles/create" method="POST" enctype="multipart/form-data" class="space-y-4">
+
+      <!-- Hidden ID for updating -->
+      <input type="hidden" name="id" value="<?= $article['id'] ?>" />
+
       <div>
-        <label class="block text-sm font-medium mb-1">Title</label>
-        <input type="text" name="title" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+        <label class="block text-sm font-medium mb-1" value="<?= htmlspecialchars($article['title'] ?? '') ?>">Title</label>
+        <input type="text" name="title" value="<?= htmlspecialchars($article['title'] ?? '') ?>" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
       </div>
 
       <?php if (isset($errors['title'])) : ?>
@@ -37,7 +41,7 @@
 
       <div>
         <label class="block text-sm font-medium mb-1">Header / Excerpt</label>
-        <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"></textarea>
+        <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3" value="<?= htmlspecialchars($article['header'] ?? '') ?>"></textarea>
       </div>
 
       <?php if (isset($errors['header'])) : ?>
@@ -47,7 +51,7 @@
       <!-- Main Article Content Area -->
       <div>
         <label class="block text-sm font-medium mb-1">Article Content</label>
-        <textarea name="article_description" required placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"></textarea>
+        <textarea name="article_description" required value="<?= htmlspecialchars($article['article_description'] ?? '') ?>" placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"></textarea>
       </div>
 
       <?php if (isset($errors['article'])) : ?>

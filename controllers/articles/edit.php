@@ -16,5 +16,5 @@ authorize($article['writer_id'] === $currentUserId);
 view('articles/edit.view.php', [
     'heading' => 'Edit Notes',
     'errors' => [],
-    'articles' => $article
+    'article' => $article
 ]);
