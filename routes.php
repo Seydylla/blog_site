@@ -6,6 +6,8 @@ $router->get('/about', 'controllers/about.php');
 $router->get('/article', 'controllers/articles/show.php');
 $router->delete('/article', 'controllers/articles/destroy.php');
 
+$router->get('/article/edit', 'controllers/articles/edit.php');
+
 $router->get('/articles/create', 'controllers/articles/create.php');
 $router->post('/articles/create', 'controllers/articles/store.php');
 
