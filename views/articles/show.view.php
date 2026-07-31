@@ -66,13 +66,11 @@
         <p><?= htmlspecialchars($article['article_description']) ?></p>
       </div>
 
-      <form class="mt-8 flex justify-end" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="hidden" name="id" value="<?= $article['id'] ?>">
-        <button type="submit" class="rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 cursor-pointer">
-          Delete Article
-        </button>
-      </form>
+      <div class="mt-8 flex justify-end">
+        <a href="article/edit?id=<?= $article['id'] ?>" class="rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 cursor-pointer">
+          Edit article
+        </a>
+      </div>
 
     </article>
   </main>
