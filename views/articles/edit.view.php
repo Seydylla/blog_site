@@ -14,9 +14,10 @@
   <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto">
     <h1 class="text-2xl font-bold mb-6">Edit Article</h1>
 
-    <form action="/articles/create" method="POST" enctype="multipart/form-data" class="space-y-4">
+    <form action="/article" method="POST" enctype="multipart/form-data" class="space-y-4">
 
       <!-- Hidden ID for updating -->
+      <input type="hidden" name="_method" value="PATCH">
       <input type="hidden" name="id" value="<?= $article['id'] ?>" />
 
       <div>
@@ -61,7 +62,7 @@
       <div class="grid grid-cols-3 gap-4">
         <div>
           <label class="block text-sm font-medium mb-1">Article Image</label>
-          <input type="file" name="img" required 
+          <input type="file" name="img"
             class="w-full border border-gray-200 rounded-lg p-2 text-sm text-gray-500 file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-brand/10 file:text-brand hover:file:bg-brand/20 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
         </div>
         <div>
@@ -89,7 +90,7 @@
           Cancel
         </a>
         <button type="submit" class="w-1/2 bg-brand hover:opacity-90 text-white font-semibold py-3 rounded-full transition cursor-pointer">
-          Publish Article
+          Update Article
         </button>
       </div>
     </form>
