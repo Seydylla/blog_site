@@ -57,6 +57,9 @@
               />
             </div>
           </div>
+          <?php if (isset($errors['name'])) : ?>
+            <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['name'] ?></p>
+          <?php endif; ?>
           
           <!-- Email Input -->
           <div>
@@ -74,6 +77,9 @@
               />
             </div>
           </div>
+          <?php if (isset($errors['email'])) : ?>
+            <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['email'] ?></p>
+          <?php endif; ?>
 
           <!-- Password Input -->
           <div>
@@ -93,6 +99,9 @@
               />
             </div>
           </div>
+          <?php if (isset($errors['password'])) : ?>
+            <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['password'] ?></p>
+          <?php endif; ?>
 
           <!-- Submit Button -->
           <button 
