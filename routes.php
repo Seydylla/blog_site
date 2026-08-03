@@ -13,3 +13,5 @@ $router->get('/articles/create', 'controllers/articles/create.php');
 $router->post('/articles/create', 'controllers/articles/store.php');
 
 $router->get('/articles', 'controllers/articles/index.php');
+
+$router->get('/register', 'controllers/registration/create.php');

@@ -17,7 +17,8 @@
           <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" />
         </svg>
       </button>
-      <a href="#newsletter" class="rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-ink">Subscribe</a>
+      
+      <a href="/register" class="rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-ink">Login</a>
     </div>
 
     <button id="menuBtn" class="flex h-10 w-10 items-center justify-center rounded-lg border border-mint text-ink md:hidden" aria-label="Toggle menu">
@@ -32,6 +33,8 @@
       <a href="/" class="text-sm font-medium text-ink/80">Home</a>
       <a href="/articles" class="text-sm font-medium text-ink/80">Articles</a>
       <a href="/about" class="text-sm font-medium text-ink/80">About</a>
+      <!-- Added Login link for mobile navigation drawer -->
+      <a href="/login" class="text-sm font-semibold text-brand">Login</a>
     </nav>
   </div>
 </header>
