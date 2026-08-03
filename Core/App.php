@@ -18,6 +18,6 @@ class App{
     }
 
     public static function resolve($key) {
-        static::container()->resolve($key);
+        return static::container()->resolve($key);
     }
 }

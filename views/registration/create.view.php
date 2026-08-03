@@ -38,7 +38,25 @@
         </div>
 
         <!-- Login Form -->
-        <form action="/login" method="POST" class="mt-8 space-y-5">
+        <form action="/register" method="POST" class="mt-8 space-y-5">
+
+
+        <!-- Name Input -->
+        <div>
+            <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate">
+              Name
+            </label>
+            <div class="mt-1.5">
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="John Doe"
+                class="focus-glow w-full rounded-full border border-mint bg-bg/50 px-5 py-3.5 text-sm text-ink placeholder-ink/40 transition outline-none focus:border-brand focus:bg-white"
+              />
+            </div>
+          </div>
           
           <!-- Email Input -->
           <div>
