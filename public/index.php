@@ -1,38 +1,20 @@
 <?php
 
-session_start();
+use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
 
-const BASE_PATH = __DIR__ . '/../';
+define('LARAVEL_START', microtime(true));
 
-require BASE_PATH . 'Core/functions.php';
+// Determine if the application is in maintenance mode...
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
 
-spl_autoload_register(function($class) {
+// Register the Composer autoloader...
+require __DIR__.'/../vendor/autoload.php';
 
-    $class= str_replace('\\', DIRECTORY_SEPARATOR, $class);
+// Bootstrap Laravel and handle the request...
+/** @var Application $app */
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-    require base_path("{$class}.php");
-});
-
-use Core\Container;
-use Core\App;
-use Core\Database;
-
-$container = new Container();
-
-$container->bind('Core\Database', function() {
-    $config = require base_path('config.php');
-    return new Database($config['database']);
-});
-
-$db = $container->resolve('Core\Database');
-
-App::setContainer($container);
-
-$router = new Core\Router();
-
-$routes = require base_path('routes.php');
-$uri = parse_url($_SERVER['REQUEST_URI']) ['path'];
-
-$method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
-
-$router->route($uri, $method);
+$app->handleRequest(Request::capture());
