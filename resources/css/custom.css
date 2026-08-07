@@ -1,0 +1,71 @@
+
+    html { scroll-behavior: smooth; }
+    body { background-color: #F7FAFB; color: #1F2939; font-family: 'Inter', 'Segoe UI', sans-serif; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { height: 8px; width: 8px; }
+    ::-webkit-scrollbar-track { background: #DDF1EE; }
+    ::-webkit-scrollbar-thumb { background: #20BEAD; border-radius: 999px; }
+
+    /* Animated underline link */
+    .link-underline { position: relative; display: inline-block; }
+    .link-underline::after {
+      content: ""; position: absolute; left: 0; bottom: -2px;
+      width: 0%; height: 2px; background-color: #20BEAD; transition: width 0.3s ease;
+    }
+    .link-underline:hover::after { width: 100%; }
+
+    /* Decorative blobs */
+    .blob { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; z-index: 0; }
+
+    /* Card hover lift */
+    .card-lift { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+    .card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgb(0 0 0 / 0.09); }
+
+    /* Category chip scroll (hide scrollbar) */
+    .chip-scroll { scrollbar-width: none; }
+    .chip-scroll::-webkit-scrollbar { display: none; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(90deg, #20BEAD, #1F9D90);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* Focus glow for inputs */
+    .focus-glow:focus { outline: none; box-shadow: 0 0 0 4px rgba(32, 190, 173, 0.25); border-color: #20BEAD; }
+
+    /* Subtle dot texture overlay */
+    .texture { position: relative; }
+    .texture::before {
+      content: ""; position: absolute; inset: 0;
+      background-image: radial-gradient(rgb(0 0 0 / 0.21) 1px, transparent 1px);
+      background-size: 22px 22px; opacity: 0.04; pointer-events: none;
+    }
+
+    /* Pulsing badge dot */
+    .pulse-dot { position: relative; }
+    .pulse-dot::before {
+      content: ""; position: absolute; inset: -4px; border-radius: 999px;
+      background: rgba(32, 190, 173, 0.25); animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 0.9; }
+      70% { transform: scale(1.6); opacity: 0; }
+      100% { transform: scale(0.8); opacity: 0; }
+    }
+
+    /* Marquee tag strip */
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee-track { animation: marquee 28s linear infinite; }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+
+    /* Category filter button styles */
+    .cat-btn { border: 1px solid #DDF1EE; background: #fff; color: rgba(31,41,57,0.7); }
+    .cat-btn.active, .cat-btn:hover { border-color: #20BEAD; }
+    .cat-btn.active { background: #20BEAD; color: #fff; }
+    .cat-btn:hover:not(.active) { color: #20BEAD; }
+
+    /* Post card state transitions */
+    .post-card { transition: all 0.3s ease-out; }
+    .post-card.is-hidden { display: none; opacity: 0; transform: scale(0.95); }
