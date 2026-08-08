@@ -13,6 +13,8 @@
 
 <body class="min-h-screen bg-bg font-body text-ink">
 
+<x-nav></x-nav>
+
   <main>
     <section id="home" class="relative overflow-hidden">
       <div class="blob h-72 w-72 bg-brand -left-20 -top-20"></div>
