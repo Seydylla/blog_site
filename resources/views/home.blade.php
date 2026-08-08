@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LumenBlog — Stories Worth Reading</title>
 
-  <script src="{{ asset('js/tailwind.config.js') }}"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="{{ asset('js/tailwind.config.js') }}"></script>
   <link rel="stylesheet" href="{{ asset('style/custom.css') }}">
 
 </head>
