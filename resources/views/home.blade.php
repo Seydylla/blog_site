@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LumenBlog — Stories Worth Reading</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
   <script src="../js/tailwind.config.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../css/custom.css">
 
 </head>

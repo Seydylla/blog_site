@@ -1,6 +1,6 @@
 // System Data Constants (Mapped from raw inputs)
     const tags = ["Design", "Technology", "Travel", "Food", "Lifestyle", "Productivity", "Wellness", "Culture", "Startups", "Photography"];
-    
+
     const aboutPoints = [
       { title: "Independent voices", desc: "Every story is written by real people sharing real experience, not algorithms.", icon: "✍️" },
       { title: "No noisy ads", desc: "A clean, distraction-free reading experience designed around the words.", icon: "🌿" },
@@ -8,12 +8,12 @@
     ];
 
     const posts = [
-      { image: "/images/post-1.jpg", category: "Travel", title: "Chasing sunrise: a week among the northern trails", excerpt: "Notes from a solo trek through misty peaks and the villages that welcomed a stranger in.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Mar 2, 2026", read: "5 min" },
-      { image: "/images/post-2.jpg", category: "Technology", title: "The quiet return of simple, focused tools", excerpt: "Why minimal apps and single-purpose gadgets are winning back our attention.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Feb 27, 2026", read: "4 min" },
-      { image: "/images/post-3.jpg", category: "Food", title: "Five bowls that make weeknight cooking joyful", excerpt: "Fast, colorful, and nourishing recipes that fit into an ordinary Tuesday.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Feb 20, 2026", read: "3 min" },
-      { image: "/images/post-4.jpg", category: "Lifestyle", title: "Designing a home that actually slows you down", excerpt: "Small interior shifts that changed the way our family spends evenings together.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Feb 14, 2026", read: "6 min" },
-      { image: "/images/post-5.jpg", category: "Design", title: "Color theory lessons hiding in everyday objects", excerpt: "How a walk through a hardware store reshaped the way I build palettes.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Feb 9, 2026", read: "7 min" },
-      { image: "/images/post-featured.jpg", category: "Technology", title: "Notes on writing software slowly, on purpose", excerpt: "A case for shipping less, thinking more, and trusting the long feedback loop.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Jan 30, 2026", read: "8 min" }
+      { image: "./images/post-1.jpg", category: "Travel", title: "Chasing sunrise: a week among the northern trails", excerpt: "Notes from a solo trek through misty peaks and the villages that welcomed a stranger in.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Mar 2, 2026", read: "5 min" },
+      { image: "./images/post-2.jpg", category: "Technology", title: "The quiet return of simple, focused tools", excerpt: "Why minimal apps and single-purpose gadgets are winning back our attention.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Feb 27, 2026", read: "4 min" },
+      { image: "./images/post-3.jpg", category: "Food", title: "Five bowls that make weeknight cooking joyful", excerpt: "Fast, colorful, and nourishing recipes that fit into an ordinary Tuesday.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Feb 20, 2026", read: "3 min" },
+      { image: "./images/post-4.jpg", category: "Lifestyle", title: "Designing a home that actually slows you down", excerpt: "Small interior shifts that changed the way our family spends evenings together.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Feb 14, 2026", read: "6 min" },
+      { image: "./images/post-5.jpg", category: "Design", title: "Color theory lessons hiding in everyday objects", excerpt: "How a walk through a hardware store reshaped the way I build palettes.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Feb 9, 2026", read: "7 min" },
+      { image: "./images/post-featured.jpg", category: "Technology", title: "Notes on writing software slowly, on purpose", excerpt: "A case for shipping less, thinking more, and trusting the long feedback loop.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Jan 30, 2026", read: "8 min" }
     ];
 
     const footerColumns = [
@@ -72,10 +72,10 @@
 
     function renderPosts() {
       const cards = document.querySelectorAll('#postGrid article');
-      
+
       cards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
-        
+
         if (activeCategory === "All" || cardCategory === activeCategory) {
           card.style.display = 'flex'; // Shows card
         } else {
