@@ -7,7 +7,7 @@
 
   <script src="{{ asset('js/tailwind.config.js') }}"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+  <link rel="stylesheet" href="{{ asset('style/custom.css') }}">
 
 </head>
 
