@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LumenBlog — Stories Worth Reading</title>
 
-  <script src="../js/tailwind.config.js"></script>
+  <script src="{{ asset('js/tailwind.config.js') }}"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
 </head>
 
@@ -136,11 +136,10 @@
     </section>
   </main>
 
+  <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/index.js') }}"></script>
+
   <x-footer></x-footer>
-
-
-  <script src="../js/main.js"></script>
-  <script src="../js/index.js"></script>
 
 </body>
 </html>
