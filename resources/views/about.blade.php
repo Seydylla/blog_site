@@ -50,7 +50,6 @@
 
   <script src="{{ asset('js/about.js') }}"></script>
   <script src="{{ asset('js/main.js') }}"></script>
-  <script src="{{ asset('js/index.js') }}"></script>
 
   <x-footer></x-footer>
 

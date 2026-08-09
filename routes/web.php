@@ -11,5 +11,7 @@ Route::get('/about', function () {
 });
 
 Route::get('/articles', function () {
-    return view('articles');
+    $articles = []; // Fetch from DB: Article::all();
+
+    return view('articles', compact('articles'));
 });
