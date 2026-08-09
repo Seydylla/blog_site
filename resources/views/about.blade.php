@@ -29,10 +29,6 @@
               empty. Today it's a small home for writers who care about craft, and readers
               who want stories that actually stay with them.
             </p>
-
-            <div id="aboutPoints" class="mt-10 space-y-6">
-              <!-- Rendered dynamically -->
-            </div>
           </div>
 
           <div class="relative">
@@ -53,6 +49,7 @@
   </main>
 
   <script src="{{ asset('js/about.js') }}"></script>
+  <script src="{{ asset('js/main.js') }}"></script>
   <script src="{{ asset('js/index.js') }}"></script>
 
   <x-footer></x-footer>
