@@ -6,9 +6,9 @@
     </a>
 
     <nav class="hidden items-center gap-8 md:flex">
-      <a href="/" class="link-underline text-sm font-medium text-ink/80 hover:text-ink">Home</a>
-      <a href="/articles" class="link-underline text-sm font-medium text-ink/80 hover:text-ink">Articles</a>
-      <a href="/about" class="link-underline text-sm font-medium text-ink/80 hover:text-ink">About</a>
+      <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+      <x-nav-link href="/articles" :active="request()->is('articles')">Articles</x-nav-link>
+      <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
     </nav>
 
     <div class="hidden items-center gap-3 md:flex">
