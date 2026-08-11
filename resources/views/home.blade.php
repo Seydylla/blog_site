@@ -137,7 +137,7 @@
   </main>
 
   <script src="{{ asset('js/main.js') }}"></script>
-  <script src="{{ asset('js/index.js') }}"></script>
+  <script></script>
 
   <x-footer></x-footer>
 
