@@ -48,7 +48,6 @@
     </section>
   </main>
 
-  <script src="{{ asset('js/about.js') }}"></script>
   <script src="{{ asset('js/main.js') }}"></script>
 
   <x-footer></x-footer>
