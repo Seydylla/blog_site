@@ -15,5 +15,13 @@ Route::get('/articles', function () {
 
     $articles = Articles::all();
 
-    return view('articles/index', compact('articles'));
+    return view('articles.index', compact('articles'));
+});
+
+
+Route::get('/articles/{id}', function ($id){
+
+    $article = Articles::find($id);
+
+    return view('articles.show', ['article' => $article]);
 });

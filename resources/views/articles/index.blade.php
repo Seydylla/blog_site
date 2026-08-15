@@ -66,7 +66,7 @@
               <div class="flex items-center gap-3 border-t border-fog pt-4">
                 <img src="<?= htmlspecialchars($avatarPath) ?>" alt="<?= htmlspecialchars($article['writer_name'] ?? 'Author') ?>" class="h-8 w-8 rounded-full object-cover" />
                 <span class="text-sm font-medium text-ink"><?= htmlspecialchars($article['writer_name'] ?? 'Author') ?></span>
-                <a href="/article?id=<?= $article['id'] ?>" class="link-underline ml-auto text-sm font-semibold text-coral">Read →</a>
+                <a href="/articles/{{$article['id']}}" class="link-underline ml-auto text-sm font-semibold text-coral">Read →</a>
               </div>
             </div>
           </article>
