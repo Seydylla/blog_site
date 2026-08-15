@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Articles;
 
 Route::get('/', function () {
     return view('home');
@@ -11,7 +12,8 @@ Route::get('/about', function () {
 });
 
 Route::get('/articles', function () {
-    $articles = []; // Fetch from DB: Article::all();
 
-    return view('articles', compact('articles'));
+    $articles = Articles::all();
+
+    return view('articles/index', compact('articles'));
 });
