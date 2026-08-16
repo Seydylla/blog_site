@@ -12,4 +12,5 @@ class Articles extends Model
 
     //  We can say protected $guarded = [];
     protected $guarded = [];
+    public $timestamps = false;
 }
