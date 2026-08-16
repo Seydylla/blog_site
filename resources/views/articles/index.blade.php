@@ -73,6 +73,10 @@
         <?php endforeach; ?>
       </div>
 
+        <div class="mt-10">
+            {{ $articles->links('partials.pagination') }}
+        </div>
+
       <?php if(empty($articles)) : ?>
         <main class="flex-1 flex items-center justify-center px-5">
 

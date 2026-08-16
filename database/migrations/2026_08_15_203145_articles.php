@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('read_time');
             $table->string('header');
             $table->string('title');
-            $table->integer('writer_id');
+            $table->foreignIdFor(\App\Models\Writers::class);
             $table->string('article_description');
             $table->timestamps();
         });

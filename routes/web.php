@@ -14,7 +14,7 @@ Route::get('/about', function () {
 
 Route::get('/articles', function () {
 
-    $articles = Articles::all();
+    $articles = Articles::latest()->paginate(3);
 
     return view('articles.index', compact('articles'));
 });
