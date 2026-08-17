@@ -11,11 +11,11 @@
 
 </head>
 
-<body class="min-h-screen bg-bg font-body text-ink flex flex-col justify-between">
+<body class="min-h-screen bg-bg font-body text-ink flex flex-col justify-between items-center">
 
     <x-nav></x-nav>
 
-  <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto">
+  <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto mx-auto">
     <h1 class="text-2xl font-bold mb-6">Edit Article</h1>
 
     <form action="/article" method="POST" enctype="multipart/form-data" class="space-y-4">
