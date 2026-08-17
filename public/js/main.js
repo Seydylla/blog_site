@@ -2,12 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const tags = ["Design", "Technology", "Travel", "Food", "Lifestyle", "Productivity", "Wellness", "Culture", "Startups", "Photography"];
 
-  const aboutPoints = [
-    { title: "Independent voices", desc: "Every story is written by real people sharing real experience, not algorithms.", icon: "✍️" },
-    { title: "No noisy ads", desc: "A clean, distraction-free reading experience designed around the words.", icon: "🌿" },
-    { title: "Weekly digest", desc: "One thoughtful email a week with the pieces worth your time.", icon: "📬" }
-  ];
-
   const posts = [
     { image: "/images/post-1.jpg", category: "Travel", title: "Chasing sunrise: a week among the northern trails", excerpt: "Notes from a solo trek through misty peaks and the villages that welcomed a stranger in.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Mar 2, 2026", read: "5 min" },
     { image: "/images/post-2.jpg", category: "Technology", title: "The quiet return of simple, focused tools", excerpt: "Why minimal apps and single-purpose gadgets are winning back our attention.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Feb 27, 2026", read: "4 min" },
