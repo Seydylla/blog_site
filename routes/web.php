@@ -63,3 +63,10 @@ Route::post('/articles/create', function (Request $request) {
 
     return redirect('/articles');
 });
+
+Route::get('/articles/{id}/edit', function ($id){
+
+    $article = Articles::find($id);
+
+    return view('articles.edit', ['article' => $article]);
+});
