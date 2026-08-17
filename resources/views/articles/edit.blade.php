@@ -25,9 +25,9 @@
         <input type="text" name="title" value="<?= htmlspecialchars($article['title'] ?? '') ?>" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
       </div>
 
-      <?php if (isset($errors['title'])) : ?>
-        <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['title'] ?></p>
-      <?php endif; ?>
+      @error('title')
+        <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
+      @enderror
 
       <div>
         <label class="block text-sm font-medium mb-1">Category</label>
@@ -45,9 +45,9 @@
         <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"><?= htmlspecialchars($article['header'] ?? '') ?></textarea>
       </div>
 
-      <?php if (isset($errors['header'])) : ?>
-        <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['header'] ?></p>
-      <?php endif; ?>
+      @error('header')
+        <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
+      @enderror
 
       <!-- Main Article Content Area -->
       <div>
