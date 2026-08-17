@@ -2,14 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const tags = ["Design", "Technology", "Travel", "Food", "Lifestyle", "Productivity", "Wellness", "Culture", "Startups", "Photography"];
 
-  const posts = [
-    { image: "/images/post-1.jpg", category: "Travel", title: "Chasing sunrise: a week among the northern trails", excerpt: "Notes from a solo trek through misty peaks and the villages that welcomed a stranger in.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Mar 2, 2026", read: "5 min" },
-    { image: "/images/post-2.jpg", category: "Technology", title: "The quiet return of simple, focused tools", excerpt: "Why minimal apps and single-purpose gadgets are winning back our attention.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Feb 27, 2026", read: "4 min" },
-    { image: "/images/post-3.jpg", category: "Food", title: "Five bowls that make weeknight cooking joyful", excerpt: "Fast, colorful, and nourishing recipes that fit into an ordinary Tuesday.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Feb 20, 2026", read: "3 min" },
-    { image: "/images/post-4.jpg", category: "Lifestyle", title: "Designing a home that actually slows you down", excerpt: "Small interior shifts that changed the way our family spends evenings together.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Feb 14, 2026", read: "6 min" },
-    { image: "/images/post-5.jpg", category: "Design", title: "Color theory lessons hiding in everyday objects", excerpt: "How a walk through a hardware store reshaped the way I build palettes.", author: "Nina Cole", avatar: "/images/avatar-1.jpg", date: "Feb 9, 2026", read: "7 min" },
-    { image: "/images/post-featured.jpg", category: "Technology", title: "Notes on writing software slowly, on purpose", excerpt: "A case for shipping less, thinking more, and trusting the long feedback loop.", author: "Marco Idris", avatar: "/images/avatar-2.jpg", date: "Jan 30, 2026", read: "8 min" }
-  ];
+  const categories = ["Travel", "Technology", "Food", "Lifestyle", "Design"];
 
   const footerColumns = [
     { title: "Explore", links: ["Home", "Articles", "Categories", "About"] },
@@ -23,6 +16,35 @@ document.addEventListener('DOMContentLoaded', () => {
     { label: "IN", path: "M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3ZM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.8-2c4 0 4.7 2.6 4.7 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9Z" }
   ];
 
+  // Dark mode — apply saved preference on every page
+  const html = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
+
+  // Dark mode toggle button (only exists on index page)
+  const toggle = document.getElementById('darkToggle');
+  const iconSun = document.getElementById('iconSun');
+  const iconMoon = document.getElementById('iconMoon');
+
+  if (toggle) {
+    const isDark = html.classList.contains('dark');
+    if (iconSun) iconSun.classList.toggle('hidden', !isDark);
+    if (iconMoon) iconMoon.classList.toggle('hidden', isDark);
+
+    toggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      const nowDark = html.classList.contains('dark');
+      localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+      if (iconSun) iconSun.classList.toggle('hidden', !nowDark);
+      if (iconMoon) iconMoon.classList.toggle('hidden', nowDark);
+    });
+  }
+
+  // Mobile menu
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const iconOpen = document.getElementById('menuIconOpen');
@@ -45,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const categoryContainer = document.getElementById('categories');
-  const categoriesList = ["All", ...new Set(posts.map(p => p.category))];
+  const categoriesList = ["All", ...new Set(categories)];
   let activeCategory = "All";
 
   function renderCategories() {
@@ -105,6 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
 
     footerGrid.innerHTML += colsHTML;
+  }
+
+  const marqueeTrack = document.getElementById('marqueeTrack');
+  if (marqueeTrack) {
+    const doubleTags = [...tags, ...tags];
+    marqueeTrack.innerHTML = doubleTags.map(tag => `
+      <span class="flex items-center gap-2 whitespace-nowrap rounded-full border border-mint dark:border-gray-700 bg-bg dark:bg-gray-800 px-5 py-2 text-sm font-medium text-ink/80 dark:text-gray-300">
+        <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>${tag}
+      </span>
+    `).join('');
   }
 
   renderCategories();

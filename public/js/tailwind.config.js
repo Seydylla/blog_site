@@ -1,5 +1,5 @@
-
 tailwind.config = {
+    darkMode: 'class',
     theme: {
     extend: {
         colors: {
@@ -12,7 +12,7 @@ tailwind.config = {
             line: "#D2D2D2",
             fog: "#EEEEEE",
         },
-        
+
         fontFamily: {
             display: ["Poppins", "Segoe UI", "sans-serif"],
             body: ["Inter", "Segoe UI", "sans-serif"],

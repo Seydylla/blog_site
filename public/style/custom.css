@@ -1,5 +1,4 @@
-
-    html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
     body { background-color: #F7FAFB; color: #1F2939; font-family: 'Inter', 'Segoe UI', sans-serif; }
 
     /* Custom scrollbar */
@@ -60,11 +59,16 @@
     .marquee-track { animation: marquee 28s linear infinite; }
     .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
 
-    /* Category filter button styles */
+    /* Category filter button styles — light mode */
     .cat-btn { border: 1px solid #DDF1EE; background: #fff; color: rgba(31,41,57,0.7); }
     .cat-btn.active, .cat-btn:hover { border-color: #20BEAD; }
     .cat-btn.active { background: #20BEAD; color: #fff; }
     .cat-btn:hover:not(.active) { color: #20BEAD; }
+
+    /* Category filter button styles — dark mode */
+    .dark .cat-btn { border-color: #374151; background: #111827; color: rgba(209,213,219,0.8); }
+    .dark .cat-btn.active { background: #20BEAD; border-color: #20BEAD; color: #fff; }
+    .dark .cat-btn:hover:not(.active) { border-color: #20BEAD; color: #20BEAD; }
 
     /* Post card state transitions */
     .post-card { transition: all 0.3s ease-out; }
