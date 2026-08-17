@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Articles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 Route::get('/', function () {
     return view('home');
@@ -69,4 +70,36 @@ Route::get('/articles/{id}/edit', function ($id){
     $article = Articles::find($id);
 
     return view('articles.edit', ['article' => $article]);
+});
+
+Route::patch('/articles/{article}', function (Request $request, Articles $article) {
+    // 1. Validate inputs
+    $validated = $request->validate([
+        'title'               => 'required|min:1|max:20',
+        'catagory'            => 'required|string',
+        'header'              => 'required|min:1|max:100',
+        'article_description' => 'required|min:1|max:1000',
+        'img'                 => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+        'read_time'           => 'required|integer',
+        'writer_id'           => 'required|integer',
+    ]);
+
+    // 2. Handle File Upload if a new file is attached
+    if ($request->hasFile('img')) {
+        // Remove previous image from public directory if it exists
+        if ($article->img && File::exists(public_path('images/' . $article->img))) {
+            File::delete(public_path('images/' . $article->img));
+        }
+
+        $image = $request->file('img');
+        $imageName = time() . '_' . $image->getClientOriginalName();
+        $image->move(public_path('images'), $imageName);
+        $validated['img'] = $imageName;
+    }
+
+    // 3. Update model using Eloquent
+    $article->update($validated);
+
+    // 4. Redirect to the updated article route
+    return redirect('/articles/article?id=' . $article->id);
 });

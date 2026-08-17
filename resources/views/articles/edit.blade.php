@@ -19,7 +19,9 @@
     <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto mx-auto">
         <h1 class="text-2xl font-bold mb-6">Edit Article</h1>
 
-        <form action="/article" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <form method="POST" action="/articles/{{$article->id}}" enctype="multipart/form-data" class="space-y-4">
+            @csrf
+            @method('PATCH')
 
         <div>
             <label class="block text-sm font-medium mb-1" value="<?= htmlspecialchars($article['title'] ?? '') ?>">Title</label>
