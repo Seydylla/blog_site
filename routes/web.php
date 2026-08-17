@@ -73,7 +73,6 @@ Route::get('/articles/{id}/edit', function ($id){
 });
 
 Route::patch('/articles/{article}', function (Request $request, Articles $article) {
-    // 1. Validate inputs
     $validated = $request->validate([
         'title'               => 'required|min:1|max:20',
         'catagory'            => 'required|string',
@@ -84,9 +83,7 @@ Route::patch('/articles/{article}', function (Request $request, Articles $articl
         'writer_id'           => 'required|integer',
     ]);
 
-    // 2. Handle File Upload if a new file is attached
     if ($request->hasFile('img')) {
-        // Remove previous image from public directory if it exists
         if ($article->img && File::exists(public_path('images/' . $article->img))) {
             File::delete(public_path('images/' . $article->img));
         }
@@ -97,9 +94,14 @@ Route::patch('/articles/{article}', function (Request $request, Articles $articl
         $validated['img'] = $imageName;
     }
 
-    // 3. Update model using Eloquent
     $article->update($validated);
 
-    // 4. Redirect to the updated article route
-    return redirect('/articles/article?id=' . $article->id);
+    return redirect('/articles/' . $article->id);
+});
+
+Route::delete('/articles/{id}', function ($id){
+
+    Articles::findOrFail($id)->delete();
+
+    return redirect('/articles');
 });

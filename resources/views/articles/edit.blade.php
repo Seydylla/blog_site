@@ -19,7 +19,7 @@
     <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto mx-auto">
         <h1 class="text-2xl font-bold mb-6">Edit Article</h1>
 
-        <form method="POST" action="/articles/{{$article->id}}" enctype="multipart/form-data" class="space-y-4">
+        <form method="POST" action="/articles/{{ $article->id }}" enctype="multipart/form-data" class="space-y-4">
             @csrf
             @method('PATCH')
 
@@ -89,11 +89,11 @@
 
         <!-- Action Buttons -->
         <div class="flex items-center gap-4 pt-2">
-            <a href="/articles" class="w-1/2 text-center text-white bg-red-600 hover:bg-red-700 text-slate font-semibold py-3 rounded-full transition">
+            <a href="/articles/{{ $article->id }}" class="w-1/2 text-center text-white bg-red-600 hover:bg-red-700 text-slate font-semibold py-3 rounded-full transition">
             Cancel
             </a>
             <button type="submit" class="w-1/2 bg-brand hover:opacity-90 text-white font-semibold py-3 rounded-full transition cursor-pointer">
-            Update Article
+                Update Article
             </button>
         </div>
         </form>
