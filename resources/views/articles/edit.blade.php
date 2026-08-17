@@ -11,90 +11,92 @@
 
 </head>
 
-<body class="min-h-screen bg-bg font-body text-ink flex flex-col justify-between items-center">
+<body class="min-h-screen bg-bg font-body text-ink flex flex-col justify-between">
 
     <x-nav></x-nav>
 
-  <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto mx-auto">
-    <h1 class="text-2xl font-bold mb-6">Edit Article</h1>
+  <div class="flex-grow flex items-center justify-center p-6">
+    <main class="w-full max-w-2xl bg-white p-8 rounded-2xl border border-mint shadow-sm my-auto mx-auto">
+        <h1 class="text-2xl font-bold mb-6">Edit Article</h1>
 
-    <form action="/article" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <form action="/article" method="POST" enctype="multipart/form-data" class="space-y-4">
 
-      <div>
-        <label class="block text-sm font-medium mb-1" value="<?= htmlspecialchars($article['title'] ?? '') ?>">Title</label>
-        <input type="text" name="title" value="<?= htmlspecialchars($article['title'] ?? '') ?>" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
-      </div>
-
-      @error('title')
-        <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
-      @enderror
-
-      <div>
-        <label class="block text-sm font-medium mb-1">Category</label>
-        <select name="catagory" required class="w-full border border-gray-200 rounded-lg p-2.5 bg-white transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">
-          <option value="Travel">Travel</option>
-          <option value="Technology">Technology</option>
-          <option value="Food">Food</option>
-          <option value="Lifestyle">Lifestyle</option>
-          <option value="Design">Design</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="block text-sm font-medium mb-1">Header / Excerpt</label>
-        <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"><?= htmlspecialchars($article['header'] ?? '') ?></textarea>
-      </div>
-
-      @error('header')
-        <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
-      @enderror
-
-      <!-- Main Article Content Area -->
-      <div>
-        <label class="block text-sm font-medium mb-1">Article Content</label>
-        <textarea name="article_description" required placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"><?= htmlspecialchars($article['article_description'] ?? '') ?></textarea>
-      </div>
-
-      @error('article')
-        <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
-      @enderror
-
-      <div class="grid grid-cols-3 gap-4">
         <div>
-          <label class="block text-sm font-medium mb-1">Article Image</label>
-          <input type="file" name="img"
-            class="w-full border border-gray-200 rounded-lg p-2 text-sm text-gray-500 file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-brand/10 file:text-brand hover:file:bg-brand/20 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Read Time (min)</label>
-          <input type="number" name="read_time" value="<?= htmlspecialchars($article['read_time'] ?? '') ?>" required
-            class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
-        </div>
-        <div>
-          <label class="block text-sm font-medium mb-1">Writer</label>
-          <select name="writer_id" required
-            class="w-full border border-gray-200 rounded-lg p-2.5 bg-white transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">
-            <option value="1">Author 1</option>
-            <option value="2">Author 2</option>
-          </select>
+            <label class="block text-sm font-medium mb-1" value="<?= htmlspecialchars($article['title'] ?? '') ?>">Title</label>
+            <input type="text" name="title" value="<?= htmlspecialchars($article['title'] ?? '') ?>" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
         </div>
 
-        @error('img')
+        @error('title')
             <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
         @enderror
-      </div>
 
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-4 pt-2">
-        <a href="/articles" class="w-1/2 text-center text-white bg-red-600 hover:bg-red-700 text-slate font-semibold py-3 rounded-full transition">
-          Cancel
-        </a>
-        <button type="submit" class="w-1/2 bg-brand hover:opacity-90 text-white font-semibold py-3 rounded-full transition cursor-pointer">
-          Update Article
-        </button>
-      </div>
-    </form>
-  </main>
+        <div>
+            <label class="block text-sm font-medium mb-1">Category</label>
+            <select name="catagory" required class="w-full border border-gray-200 rounded-lg p-2.5 bg-white transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">
+            <option value="Travel">Travel</option>
+            <option value="Technology">Technology</option>
+            <option value="Food">Food</option>
+            <option value="Lifestyle">Lifestyle</option>
+            <option value="Design">Design</option>
+            </select>
+        </div>
+
+        <div>
+            <label class="block text-sm font-medium mb-1">Header / Excerpt</label>
+            <textarea name="header" required class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="3"><?= htmlspecialchars($article['header'] ?? '') ?></textarea>
+        </div>
+
+        @error('header')
+            <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
+        @enderror
+
+        <!-- Main Article Content Area -->
+        <div>
+            <label class="block text-sm font-medium mb-1">Article Content</label>
+            <textarea name="article_description" required placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"><?= htmlspecialchars($article['article_description'] ?? '') ?></textarea>
+        </div>
+
+        @error('article')
+            <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
+        @enderror
+
+        <div class="grid grid-cols-3 gap-4">
+            <div>
+            <label class="block text-sm font-medium mb-1">Article Image</label>
+            <input type="file" name="img"
+                class="w-full border border-gray-200 rounded-lg p-2 text-sm text-gray-500 file:mr-3 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-brand/10 file:text-brand hover:file:bg-brand/20 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+            </div>
+            <div>
+            <label class="block text-sm font-medium mb-1">Read Time (min)</label>
+            <input type="number" name="read_time" value="<?= htmlspecialchars($article['read_time'] ?? '') ?>" required
+                class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" />
+            </div>
+            <div>
+            <label class="block text-sm font-medium mb-1">Writer</label>
+            <select name="writer_id" required
+                class="w-full border border-gray-200 rounded-lg p-2.5 bg-white transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20">
+                <option value="1">Author 1</option>
+                <option value="2">Author 2</option>
+            </select>
+            </div>
+
+            @error('img')
+                <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
+            @enderror
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-4 pt-2">
+            <a href="/articles" class="w-1/2 text-center text-white bg-red-600 hover:bg-red-700 text-slate font-semibold py-3 rounded-full transition">
+            Cancel
+            </a>
+            <button type="submit" class="w-1/2 bg-brand hover:opacity-90 text-white font-semibold py-3 rounded-full transition cursor-pointer">
+            Update Article
+            </button>
+        </div>
+        </form>
+    </main>
+  </div>
 
   <script src="{{ asset('js/main.js') }}"></script>
 
