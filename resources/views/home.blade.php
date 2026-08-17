@@ -11,9 +11,22 @@
 
 </head>
 
-<body class="min-h-screen bg-bg font-body text-ink">
+<body class="min-h-screen bg-bg dark:bg-gray-950 font-body text-ink dark:text-gray-100 transition-colors duration-300">
 
 <x-nav></x-nav>
+
+  <button
+    id="darkToggle"
+    aria-label="Toggle dark mode"
+    class="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-ink dark:bg-white shadow-lg transition hover:scale-110"
+  >
+    <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07-.71.71M6.34 17.66l-.71.71m12.02 0-.71-.71M6.34 6.34l-.71-.71M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+    </svg>
+    <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  </button>
 
   <main>
     <section id="home" class="relative overflow-hidden">
@@ -22,57 +35,57 @@
 
       <div class="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-2">
         <div>
-          <span class="pulse-dot inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand shadow-sm">
+          <span class="pulse-dot inline-flex items-center gap-2 rounded-full bg-white dark:bg-gray-800 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand shadow-sm">
             <span class="h-2 w-2 rounded-full bg-brand"></span>
             Fresh stories every week
           </span>
 
-          <h1 class="font-display mt-6 text-4xl font-bold leading-tight text-ink sm:text-5xl lg:text-6xl">
+          <h1 class="font-display mt-6 text-4xl font-bold leading-tight text-ink dark:text-gray-100 sm:text-5xl lg:text-6xl">
             Stories worth your
             <span class="gradient-text"> morning coffee.</span>
           </h1>
 
-          <p class="mt-6 max-w-lg text-base leading-relaxed text-ink/70 sm:text-lg">
+          <p class="mt-6 max-w-lg text-base leading-relaxed text-ink/70 dark:text-gray-400 sm:text-lg">
             LumenBlog brings you honest writing on design, technology, travel and
             everyday life — curated by a community of thinkers who love a good story.
           </p>
 
           <div class="mt-8 flex flex-wrap items-center gap-4">
-            <a href="#articles" class="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-ink/10 transition hover:bg-brand">Start Reading</a>
-            <a href="#newsletter" class="link-underline text-sm font-semibold text-ink">Join the newsletter →</a>
+            <a href="#articles" class="rounded-full bg-ink dark:bg-gray-100 px-7 py-3.5 text-sm font-semibold text-white dark:text-gray-900 shadow-lg shadow-ink/10 transition hover:bg-brand dark:hover:bg-brand dark:hover:text-white">Start Reading</a>
+            <a href="#newsletter" class="link-underline text-sm font-semibold text-ink dark:text-gray-100">Join the newsletter →</a>
           </div>
 
-          <div class="mt-12 flex flex-wrap items-center gap-8 border-t border-mint pt-6">
+          <div class="mt-12 flex flex-wrap items-center gap-8 border-t border-mint dark:border-gray-700 pt-6">
             <div>
-              <p class="font-display text-2xl font-bold text-ink">3.2k+</p>
-              <p class="text-xs uppercase tracking-wide text-slate">Articles published</p>
+              <p class="font-display text-2xl font-bold text-ink dark:text-gray-100">3.2k+</p>
+              <p class="text-xs uppercase tracking-wide text-slate dark:text-gray-400">Articles published</p>
             </div>
             <div>
-              <p class="font-display text-2xl font-bold text-ink">48k</p>
-              <p class="text-xs uppercase tracking-wide text-slate">Monthly readers</p>
+              <p class="font-display text-2xl font-bold text-ink dark:text-gray-100">48k</p>
+              <p class="text-xs uppercase tracking-wide text-slate dark:text-gray-400">Monthly readers</p>
             </div>
             <div>
-              <p class="font-display text-2xl font-bold text-ink">120+</p>
-              <p class="text-xs uppercase tracking-wide text-slate">Contributing writers</p>
+              <p class="font-display text-2xl font-bold text-ink dark:text-gray-100">120+</p>
+              <p class="text-xs uppercase tracking-wide text-slate dark:text-gray-400">Contributing writers</p>
             </div>
           </div>
         </div>
 
         <div class="relative">
-          <div class="absolute -inset-4 -z-10 rounded-[2.5rem] bg-mint"></div>
+          <div class="absolute -inset-4 -z-10 rounded-[2.5rem] bg-mint dark:bg-gray-800"></div>
           <img src="/images/hero.jpg" alt="Illustration of a writer's desk" class="aspect-[4/3] w-full rounded-[2rem] object-cover shadow-2xl shadow-ink/10" />
-          <div class="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-xl">
+          <div class="absolute -bottom-6 -left-6 flex items-center gap-3 rounded-2xl bg-white dark:bg-gray-800 px-5 py-4 shadow-xl">
             <img src="/images/avatar-1.jpg" alt="Author" class="h-10 w-10 rounded-full object-cover" />
             <div>
-              <p class="text-sm font-semibold text-ink">New post live</p>
-              <p class="text-xs text-slate">2 minutes ago</p>
+              <p class="text-sm font-semibold text-ink dark:text-gray-100">New post live</p>
+              <p class="text-xs text-slate dark:text-gray-400">2 minutes ago</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="marquee-wrap overflow-hidden border-y border-mint bg-white py-4">
+    <div class="marquee-wrap overflow-hidden border-y border-mint dark:border-gray-700 bg-white dark:bg-gray-900 py-4">
       <div id="marqueeTrack" class="marquee-track flex w-max gap-4">
       </div>
     </div>
@@ -148,11 +161,31 @@
     if (marqueeTrack) {
         const doubleTags = [...tags, ...tags];
         marqueeTrack.innerHTML = doubleTags.map(tag => `
-        <span class="flex items-center gap-2 whitespace-nowrap rounded-full border border-mint bg-bg px-5 py-2 text-sm font-medium text-ink/80">
+        <span class="flex items-center gap-2 whitespace-nowrap rounded-full border border-mint dark:border-gray-700 bg-bg dark:bg-gray-800 px-5 py-2 text-sm font-medium text-ink/80 dark:text-gray-300">
             <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>${tag}
         </span>
         `).join('');
     }
+
+    const html = document.documentElement;
+    const toggle = document.getElementById('darkToggle');
+    const iconSun = document.getElementById('iconSun');
+    const iconMoon = document.getElementById('iconMoon');
+
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+        iconSun.classList.remove('hidden');
+        iconMoon.classList.add('hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        const isDark = html.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        iconSun.classList.toggle('hidden', !isDark);
+        iconMoon.classList.toggle('hidden', isDark);
+    });
     });
   </script>
 

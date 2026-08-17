@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // System Data Constants
   const tags = ["Design", "Technology", "Travel", "Food", "Lifestyle", "Productivity", "Wellness", "Culture", "Startups", "Photography"];
 
   const aboutPoints = [
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     { label: "IN", path: "M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3ZM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.8-2c4 0 4.7 2.6 4.7 6V21h-4v-5.2c0-1.3 0-2.9-1.8-2.9s-2 1.4-2 2.8V21H9Z" }
   ];
 
-  // 1. Mobile Menu Guard
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   const iconOpen = document.getElementById('menuIconOpen');
@@ -52,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Categories Guard
   const categoryContainer = document.getElementById('categories');
   const categoriesList = ["All", ...new Set(posts.map(p => p.category))];
   let activeCategory = "All";
@@ -75,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Posts Guard
   function renderPosts() {
     const cards = document.querySelectorAll('#postGrid article');
     if (!cards.length) return;
@@ -90,11 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Socials Guard
   const socialsContainer = document.getElementById('socialsContainer');
   if (socialsContainer) {
     socialsContainer.innerHTML = socials.map(s => `
-      <a href="#" aria-label="${s.label}" class="flex h-10 w-10 items-center justify-center rounded-full border border-mint text-ink transition hover:border-brand hover:bg-brand hover:text-white">
+      <a href="#" aria-label="${s.label}" class="flex h-10 w-10 items-center justify-center rounded-full border border-mint dark:border-gray-700 text-ink dark:text-gray-300 transition hover:border-brand hover:bg-brand hover:text-white">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="${s.path}" />
         </svg>
@@ -102,15 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
-  // 5. Footer Grid Guard
   const footerGrid = document.getElementById('footerGrid');
   if (footerGrid) {
     const colsHTML = footerColumns.map(col => `
       <div>
-        <h4 class="font-display text-sm font-bold uppercase tracking-wide text-ink">${col.title}</h4>
+        <h4 class="font-display text-sm font-bold uppercase tracking-wide text-ink dark:text-gray-100">${col.title}</h4>
         <ul class="mt-4 space-y-3">
           ${col.links.map(link => `
-            <li><a href="#" class="link-underline text-sm text-ink/60 hover:text-brand">${link}</a></li>
+            <li><a href="#" class="link-underline text-sm text-ink/60 dark:text-gray-400 hover:text-brand">${link}</a></li>
           `).join('')}
         </ul>
       </div>
