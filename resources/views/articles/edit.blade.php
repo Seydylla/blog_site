@@ -55,9 +55,9 @@
         <textarea name="article_description" required placeholder="Write your full article here..." class="w-full border border-gray-200 rounded-lg p-2.5 transition outline-none focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20" rows="10"><?= htmlspecialchars($article['article_description'] ?? '') ?></textarea>
       </div>
 
-      <?php if (isset($errors['article'])) : ?>
-        <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['article'] ?></p>
-      <?php endif; ?>
+      @error('article')
+        <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
+      @enderror
 
       <div class="grid grid-cols-3 gap-4">
         <div>
@@ -79,9 +79,9 @@
           </select>
         </div>
 
-        <?php if (isset($errors['img'])) : ?>
-          <p class="mt-3 text-sm/6 text-red-600 dark:text-red-400"><?= $errors['img'] ?></p>
-        <?php endif; ?>
+        @error('img')
+            <p class="mt-3 text-sm/6 text-red-600">{{$message}}</p>
+        @enderror
       </div>
 
       <!-- Action Buttons -->
