@@ -11,48 +11,12 @@
       <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
     </nav>
 
-    <div class="hidden items-center gap-3 md:flex">
-      <button aria-label="Search" class="flex h-10 w-10 items-center justify-center rounded-full border border-mint dark:border-gray-700 text-ink dark:text-gray-300 transition hover:border-brand hover:text-brand">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" />
-        </svg>
-      </button>
+    <div class="hidden items-center gap-8 md:flex">
 
-      <?php if ($_SESSION['user'] ?? false) : ?>
-        <div class="relative ml-2 group">
-          <button class="flex items-center gap-2 rounded-full border-2 border-mint dark:border-gray-700 p-0.5 transition hover:border-brand focus:outline-none">
-            <img
-              src="<?= $_SESSION['user']['avatar'] ?? '/images/avatar-1.jpg' ?>"
-              alt="User Avatar"
-              class="h-8 w-8 rounded-full object-cover"
-            />
-          </button>
-
-          <div class="absolute right-0 top-full mt-2 w-48 rounded-2xl border border-mint dark:border-gray-700 bg-white dark:bg-gray-900 p-2 shadow-xl shadow-ink/10 opacity-0 invisible transition-all duration-200 group-hover:opacity-100 group-hover:visible z-50">
-            <div class="px-3 py-2 border-b border-mint/50 dark:border-gray-700">
-              <p class="text-xs font-semibold text-slate dark:text-gray-400 uppercase">Signed in as</p>
-              <p class="text-sm font-bold text-ink dark:text-gray-100 truncate"><?= $_SESSION['user']['email'] ?? 'User' ?></p>
-            </div>
-
-            <a href="/profile" class="block rounded-xl px-3 py-2 text-sm text-ink/80 dark:text-gray-300 transition hover:bg-bg dark:hover:bg-gray-800 hover:text-brand font-medium">
-              Your profile
-            </a>
-            <a href="/settings" class="block rounded-xl px-3 py-2 text-sm text-ink/80 dark:text-gray-300 transition hover:bg-bg dark:hover:bg-gray-800 hover:text-brand font-medium">
-              Settings
-            </a>
-
-            <form action="/logout" method="POST" class="mt-1 border-t border-mint/50 dark:border-gray-700 pt-1">
-              <button type="submit" class="w-full text-left rounded-xl px-3 py-2 text-sm text-coral transition hover:bg-coral/10 font-semibold">
-                Sign out
-              </button>
-            </form>
-          </div>
-        </div>
-
-      <?php else : ?>
-        <a href="/login" class="text-sm font-semibold text-ink/80 dark:text-gray-300 transition hover:text-brand px-3">Log in</a>
-        <a href="/register" class="rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-ink dark:hover:bg-gray-100 dark:hover:text-gray-900">Register</a>
-      <?php endif; ?>
+        @guest
+            <x-nav-link href="/login">Log in</x-nav-link>
+            <x-nav-link href="/register">Register</x-nav-link>
+        @endguest
     </div>
 
     <button id="menuBtn" class="flex h-10 w-10 items-center justify-center rounded-lg border border-mint dark:border-gray-700 text-ink dark:text-gray-300 md:hidden" aria-label="Toggle menu">
