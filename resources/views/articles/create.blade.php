@@ -23,7 +23,7 @@
   <main class="w-full max-w-2xl bg-white dark:bg-gray-900 p-8 rounded-2xl border border-mint dark:border-gray-700 shadow-sm mx-auto my-10">
     <h1 class="text-2xl font-bold mb-6 text-ink dark:text-gray-100">Create New Article</h1>
 
-    <form action="/articles/create" method="POST" enctype="multipart/form-data" class="space-y-4">
+    <form action="/articles" method="POST" enctype="multipart/form-data" class="space-y-4">
 
         @csrf
 
