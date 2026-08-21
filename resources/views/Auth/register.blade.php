@@ -25,34 +25,31 @@
     <div class="blob pointer-events-none -bottom-20 -right-20 h-80 w-80 bg-coral opacity-70"></div>
 
     <div class="relative z-10 w-full max-w-md">
-      <div class="rounded-3xl bg-white p-8 shadow-2xl shadow-ink/10 sm:p-10 border border-mint">
+      <div class="rounded-3xl bg-white dark:bg-gray-900 p-8 shadow-2xl shadow-ink/10 sm:p-10 border border-mint dark:border-gray-700">
 
-        <!-- Header / Logo Accent -->
         <div class="text-center">
-          <span class="inline-flex items-center gap-2 rounded-full bg-mint/50 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand">
+          <span class="inline-flex items-center gap-2 rounded-full bg-mint/50 dark:bg-brand/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand">
             <span class="h-2 w-2 rounded-full bg-brand"></span>
             Welcome
           </span>
-          <h1 class="font-display mt-4 text-3xl font-bold text-ink">
+          <h1 class="font-display mt-4 text-3xl font-bold text-ink dark:text-gray-100">
             Create an Account on <span class="gradient-text">LumenBlog</span>
           </h1>
-          <p class="mt-2 text-sm text-ink/70">
+          <p class="mt-2 text-sm text-ink/70 dark:text-gray-400">
             Fill in your details below to register.
           </p>
         </div>
 
-        <!-- Registration Form -->
         <form action="/register" method="POST" class="mt-8 space-y-5">
           @csrf
 
-          <!-- Name Input -->
           <x-form-field>
             <div>
-              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate">
+              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
                 Full Name
               </label>
               <div class="mt-1.5">
-                <x-form-input id="name" name="name" required />
+                <x-form-input id="name" name="name" required placeholder="John Wellick"/>
               </div>
             </div>
             <x-form-error name="name" />
@@ -60,11 +57,11 @@
 
           <x-form-field>
             <div>
-              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate">
+              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
                 Email Address
               </label>
               <div class="mt-1.5">
-                <x-form-input id="email" name="email" type="email" required />
+                <x-form-input id="email" name="email" type="email" required placeholder="john@wellick.com"/>
               </div>
             </div>
             <x-form-error name="email" />
@@ -72,7 +69,7 @@
 
           <x-form-field>
             <div>
-              <label for="password" class="block text-xs font-semibold uppercase tracking-wider text-slate">
+              <label for="password" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
                 Password
               </label>
               <div class="mt-1.5">
@@ -84,7 +81,7 @@
 
           <button
             type="submit"
-            class="w-full rounded-full bg-ink py-3.5 text-sm font-semibold text-white shadow-lg shadow-ink/10 transition hover:bg-brand"
+            class="w-full rounded-full bg-ink dark:bg-gray-100 dark:text-gray-900 py-3.5 text-sm font-semibold text-white shadow-lg shadow-ink/10 transition hover:bg-brand dark:hover:bg-brand dark:hover:text-white"
           >
             Register →
           </button>
