@@ -20,19 +20,6 @@
 
 <x-nav></x-nav>
 
-  <button
-    id="darkToggle"
-    aria-label="Toggle dark mode"
-    class="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-ink dark:bg-white shadow-lg transition hover:scale-110"
-  >
-    <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" class="hidden h-5 w-5 text-ink" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07-.71.71M6.34 17.66l-.71.71m12.02 0-.71-.71M6.34 6.34l-.71-.71M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
-    </svg>
-    <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-    </svg>
-  </button>
-
   <main>
     <section id="home" class="relative overflow-hidden">
       <div class="blob h-72 w-72 bg-brand -left-20 -top-20"></div>
@@ -163,34 +150,14 @@
     ];
 
     const marqueeTrack = document.getElementById('marqueeTrack');
-    if (marqueeTrack) {
-        const doubleTags = [...tags, ...tags];
-        marqueeTrack.innerHTML = doubleTags.map(tag => `
-        <span class="flex items-center gap-2 whitespace-nowrap rounded-full border border-mint dark:border-gray-700 bg-bg dark:bg-gray-800 px-5 py-2 text-sm font-medium text-ink/80 dark:text-gray-300">
-            <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>${tag}
-        </span>
-        `).join('');
-    }
-
-    const html = document.documentElement;
-    const toggle = document.getElementById('darkToggle');
-    const iconSun = document.getElementById('iconSun');
-    const iconMoon = document.getElementById('iconMoon');
-
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        html.classList.add('dark');
-        iconSun.classList.remove('hidden');
-        iconMoon.classList.add('hidden');
-    }
-
-    toggle.addEventListener('click', () => {
-        html.classList.toggle('dark');
-        const isDark = html.classList.contains('dark');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        iconSun.classList.toggle('hidden', !isDark);
-        iconMoon.classList.toggle('hidden', isDark);
-    });
+        if (marqueeTrack) {
+            const doubleTags = [...tags, ...tags];
+            marqueeTrack.innerHTML = doubleTags.map(tag => `
+            <span class="flex items-center gap-2 whitespace-nowrap rounded-full border border-mint dark:border-gray-700 bg-bg dark:bg-gray-800 px-5 py-2 text-sm font-medium text-ink/80 dark:text-gray-300">
+                <span class="h-1.5 w-1.5 rounded-full bg-brand"></span>${tag}
+            </span>
+            `).join('');
+        }
     });
   </script>
 
