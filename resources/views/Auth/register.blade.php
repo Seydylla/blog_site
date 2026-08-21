@@ -45,9 +45,9 @@
 
           <x-form-field>
             <div>
-              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
+              <x-form-label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
                 Full Name
-              </label>
+              </x-form-label>
               <div class="mt-1.5">
                 <x-form-input id="name" name="name" required placeholder="John Wellick"/>
               </div>
@@ -57,9 +57,9 @@
 
           <x-form-field>
             <div>
-              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
+              <x-form-label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
                 Email Address
-              </label>
+              </x-form-label>
               <div class="mt-1.5">
                 <x-form-input id="email" name="email" type="email" required placeholder="john@wellick.com"/>
               </div>
@@ -69,15 +69,24 @@
 
           <x-form-field>
             <div>
-              <label for="password" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
+              <x-form-label for="password" class="block text-xs font-semibold uppercase tracking-wider text-slate dark:text-gray-400">
                 Password
-              </label>
+              </x-form-label>
               <div class="mt-1.5">
                 <x-form-input id="password" name="password" type="password" required />
               </div>
             </div>
             <x-form-error name="password" />
           </x-form-field>
+
+          <x-form-field>
+                <x-form-label for="password_confirmation">Password confirmation</x-form-label>
+                    <div class="mt-2">
+                        <x-form-input id="password_confirmation" name="password_confirmation" required/>
+
+                    <x-form-error name="password_confirmation" />
+                </div>
+            </x-form-field>
 
           <button
             type="submit"
