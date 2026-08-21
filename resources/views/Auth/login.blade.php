@@ -52,7 +52,6 @@
                 <x-form-input id="email" name="email" type="email" required />
               </div>
             </div>
-            <x-form-error name="email" />
           </x-form-field>
 
           <x-form-field>
@@ -64,14 +63,14 @@
                 <x-form-input id="password" name="password" type="password" required />
               </div>
             </div>
-            <x-form-error name="password" />
+            <x-form-error name="email" />
           </x-form-field>
 
           <button
             type="submit"
             class="w-full rounded-full bg-ink dark:bg-gray-100 dark:text-gray-900 py-3.5 text-sm font-semibold text-white shadow-lg shadow-ink/10 transition hover:bg-brand dark:hover:bg-brand dark:hover:text-white"
           >
-            Register →
+            Login
           </button>
         </form>
 
