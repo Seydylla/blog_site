@@ -32,17 +32,19 @@
       <a href="/about" class="text-sm font-medium text-ink/80 dark:text-gray-300">About</a>
 
       <div class="border-t border-mint dark:border-gray-700 pt-3">
-        <?php if ($_SESSION['user'] ?? false) : ?>
+        @auth
           <a href="/profile" class="block py-1.5 text-sm font-medium text-ink dark:text-gray-100">Your Profile</a>
           <a href="/settings" class="block py-1.5 text-sm font-medium text-ink dark:text-gray-100">Settings</a>
           <form action="/logout" method="POST" class="mt-2">
+            @csrf
             <button type="submit" class="text-sm font-semibold text-coral">Sign out</button>
           </form>
-        <?php else : ?>
+        @else
           <div class="flex items-center gap-4 pt-1">
+            <a href="/login" class="text-sm font-medium text-ink/80 dark:text-gray-300">Log in</a>
             <a href="/register" class="rounded-full bg-brand px-4 py-2 text-xs font-semibold text-white">Register</a>
           </div>
-        <?php endif; ?>
+        @endauth
       </div>
     </nav>
   </div>
