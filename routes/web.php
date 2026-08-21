@@ -9,3 +9,4 @@ Route::view('/about', 'about');
 Route::resource('articles', ArticleController::class);
 
 Route::get('/register', [RegisteredUserController::class, 'create']);
+Route::post('/register', [RegisteredUserController::class, 'store']);
